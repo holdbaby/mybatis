@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace = "EmpDao">
+	
+	<select id = "selectAllList" resultType="emp">
+		SELECT * FROM SCOTT.EMP
+	</select>
+	
+	<select id="selectName" resultType="emp" parameterType="emp">
+		SELECT * FROM SCOTT.EMP WHERE ENAME = #{eName}
+	</select>
+	
+	<insert id="insertEmp" parameterType="emp">
+		INSERT INTO SCOTT.EMP VALUES (#{empno:INTEGER},#{eName},#{job},#{mgr:INTEGER},#{hireDate},#{sal:INTEGER},#{comm:INTEGER},#{deptno:INTEGER})
+	</insert>
+
+</mapper>
