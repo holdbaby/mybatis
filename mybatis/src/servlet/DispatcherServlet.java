@@ -29,6 +29,10 @@ public class DispatcherServlet extends HttpServlet {
 			else if ( "/add.do".equals(servletPath)){
 				pageControllerPath = "/add";
 			}
+			// 2017.01.17 add path search
+			else if ( "search.do".equals(servletPath)){
+				pageControllerPath = "/search";
+			}
 			
 			RequestDispatcher rd = request.getRequestDispatcher(pageControllerPath);
 			rd.include(request, response);
